@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import ProductCard from "./ProductCard";
 import { Helmet } from "react-helmet";
 const ProductList = () => {
-  const { status, error } = useSelector((state) => state.products);
+  const { status, error,items } = useSelector((state) => state.products);
   const { data } = useGetAllProductsQuery();
 
   return (

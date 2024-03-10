@@ -9,6 +9,9 @@ import NotFound from './components/NotFound.jsx';
 import ProductDetails from './components/ProductDetails.jsx'
 import MainLayout from './components/layouts/MainLayout.jsx';
 import { ToastContainer, toast } from 'react-toastify';
+import CartTable from './components/CartTable.jsx';
+import 'react-toastify/dist/ReactToastify.css'
+
 const router=createBrowserRouter([
   {
     path:"/",
@@ -18,15 +21,17 @@ const router=createBrowserRouter([
   {
     path:"/products/:productId",
     element:(<MainLayout><ProductDetails/></MainLayout>)
+  },
+  {
+    path:"/cart",
+    element:(<MainLayout><CartTable/></MainLayout>)
   }
 ])
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Provider store={store}>
-      <RouterProvider router={router}>
-        <App />
+      <RouterProvider router={router}/>
         <ToastContainer />
-      </RouterProvider>
     </Provider>   
   </React.StrictMode>,
 )
